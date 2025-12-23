@@ -12,7 +12,6 @@ export default {
     SourceIntents.MANGA_SEARCH,
     SourceIntents.MANGA_CHAPTERS,
     SourceIntents.SETTINGS_FORM_PROVIDING,
-    SourceIntents.CLOUDFLARE_BYPASS_PROVIDING,
   ],
   badges: [],
   developers: [

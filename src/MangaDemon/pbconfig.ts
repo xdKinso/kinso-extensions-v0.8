@@ -10,7 +10,6 @@ export default {
     capabilities: [
         SourceIntents.MANGA_CHAPTERS,
         SourceIntents.SEARCH_RESULTS_PROVIDING,
-        SourceIntents.CLOUDFLARE_BYPASS_PROVIDING,
         SourceIntents.DISCOVER_SECIONS,
     ],
     badges: [],
