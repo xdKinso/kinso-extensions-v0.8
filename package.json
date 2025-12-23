@@ -1,0 +1,35 @@
+{
+  "name": "kinso-extensions",
+  "repositoryName": "Kinso Extensions",
+  "description": "Paperback extensions for manga sources by Kinso.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "oxlint --type-aware --fix",
+    "lint:check": "oxlint --type-aware",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "tsc": "tsc",
+    "bundle": "paperback-cli bundle",
+    "serve": "paperback-cli serve",
+    "logcat": "paperback-cli logcat",
+    "dev": "paperback-cli serve --watch",
+    "test": "npm run tsc && npm run lint:check && npm run format:check && npm run bundle",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@paperback/toolchain": "^1.0.0-alpha.57",
+    "@paperback/types": "^1.0.0-alpha.57",
+    "@types/random-useragent": "^0.3.3",
+    "husky": "^9.1.7",
+    "oxfmt": "^0.17.0",
+    "oxlint": "^1.32.0",
+    "oxlint-tsgolint": "^0.8.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "random-useragent": "^0.5.0",
+    "user-agents": "^1.1.669"
+  }
+}
