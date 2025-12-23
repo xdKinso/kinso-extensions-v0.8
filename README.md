@@ -35,12 +35,3 @@ These extensions have been converted from Paperback v0.9 to v0.8 by:
 
 Developed by Kinso - https://github.com/xdKinso
 
-## Deployment
-
-This repository automatically deploys to GitHub Pages when you push to the `master` branch.
-
-### GitHub Pages Settings
-Make sure GitHub Pages is configured in your repository settings:
-1. Go to Settings → Pages
-2. Source: GitHub Actions
-3. The site will be published at: https://xdkinso.github.io/kinso-extensions-v0.8/
