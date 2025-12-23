@@ -5,6 +5,8 @@ export default {
   description: "Extension that pulls content from mangakatana.com.",
   version: "0.0.20",
   icon: "icon.png",
+  author: "Kinso",
+  authorWebsite: "https://github.com/xdKinso",
   language: "en",
   contentRating: ContentRating.EVERYONE,
   capabilities: [

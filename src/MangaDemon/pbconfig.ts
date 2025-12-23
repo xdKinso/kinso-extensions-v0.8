@@ -4,6 +4,8 @@ export default {
     version: '0.0.10',
     name: 'MangaDemon',
     icon: 'icon.png',
+    author: 'Kinso',
+    authorWebsite: 'https://github.com/xdKinso',
     description: 'Extension for MangaDemon (demonicscans.org)',
     language: 'multi',
     contentRating: ContentRating.MATURE,

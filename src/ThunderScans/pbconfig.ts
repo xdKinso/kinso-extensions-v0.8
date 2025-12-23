@@ -5,6 +5,8 @@ export default {
   description: "Extension that pulls content from en-thunderscans.com.",
   version: "0.0.08",
   icon: "icon.png",
+  author: "Kinso",
+  authorWebsite: "https://github.com/xdKinso",
   language: "en",
   contentRating: ContentRating.EVERYONE,
   capabilities: [

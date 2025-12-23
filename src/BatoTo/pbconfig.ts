@@ -9,6 +9,8 @@ export default {
     description: "Extension that pulls content from bato.to.",
     version: "0.0.19",
     icon: "icon.png",
+    author: "Kinso",
+    authorWebsite: "https://kinso.github.io",
     language: "en",
     contentRating: ContentRating.EVERYONE,
     capabilities: [

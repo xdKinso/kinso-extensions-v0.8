@@ -5,6 +5,8 @@ export default {
   description: "Extension that pulls content from mangapark.net.",
   version: "0.0.31",
   icon: "icon.png",
+  author: "Kinso",
+  authorWebsite: "https://github.com/xdKinso",
   language: "multi",
   contentRating: ContentRating.EVERYONE,
   capabilities: [

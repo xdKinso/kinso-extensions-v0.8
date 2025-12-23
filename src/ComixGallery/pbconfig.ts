@@ -5,6 +5,8 @@ export default {
   description: "Extension that pulls content from Comix.to",
   version: "0.0.10",
   icon: "icon.png",
+  author: "Kinso",
+  authorWebsite: "https://github.com/Kinso",
   language: "en",
   contentRating: ContentRating.EVERYONE,
   capabilities:

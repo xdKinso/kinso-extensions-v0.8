@@ -5,6 +5,8 @@ export default {
   description: "Extension that pulls content from asuracomic.net.",
   version: "0.0.05",
   icon: "icon.png",
+  author: "xdKinso",
+  authorWebsite: "https://github.com/xdKinso",
   language: "en",
   contentRating: ContentRating.EVERYONE,
   capabilities: [

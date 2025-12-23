@@ -9,6 +9,8 @@ export default {
     description: "Extension that pulls content from weebcentral.com.",
     version: "0.0.02",
     icon: "icon.png",
+    author: "xdKinso",
+    authorWebsite: "https://github.com/xdKinso",
     language: "en",
     contentRating: ContentRating.EVERYONE,
     capabilities: [
