@@ -29,7 +29,7 @@
     // "noUnusedLocals": true,
     // "noUnusedParameters": true,
     // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
+    // "noPropertyAccessFromIndexSignatureInElementAccessExpression": true,
 
     // Recommended Options
     "strict": true,
@@ -41,4 +41,5 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
   },
+  "exclude": ["node_modules", "WIP", "bundles"],
 }
