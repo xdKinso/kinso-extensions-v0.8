@@ -1,34 +1,64 @@
-name: Build and Deploy Extensions
+name: Deploy Extensions
 
 on:
   push:
-    branches: [master, main]
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        node-version: [18.x]
 
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    
-    - name: Install dependencies
-      run: npm ci
-    
-    - name: Build extensions
-      run: npm run bundle
-    
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./bundles
-        cname: kinso-extensions-v0.8.github.io
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build extensions
+        run: npm run bundle
+
+      - name: Verify build output
+        run: |
+          echo "Checking bundles directory..."
+          ls -la bundles/
+          if [ ! -f bundles/versioning.json ]; then
+            echo "ERROR: versioning.json not found!"
+            echo "Contents of bundles:"
+            find bundles -type f
+            exit 1
+          fi
+          echo "✓ versioning.json found"
+          cat bundles/versioning.json
+
+      - name: Add cache control headers
+        run: |
+          echo "Cache-Control: no-cache, no-store, must-revalidate" > bundles/.nojekyll
+          echo "{}" > bundles/_config.yml
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./bundles"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
